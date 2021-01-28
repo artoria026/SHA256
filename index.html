@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar sesion</title>
+  <link rel="stylesheet" href="normal.css" />
+  <link rel="stylesheet" href="style.css" />
+  <!--
+      LINKS (IMPORTS Y DEMAS)
+    -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js" integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A==" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+  <div class="contenedor">
+    <div class="login_con iniciar">
+      <img class="avatar" src="test.jpg" alt="logo de MRSOP" />
+      <br>
+      <br>
+      <h1>Bienvenidos</h1>
+
+      <form action="">
+
+        <!--Ususario-->
+        <label for="email">E-mail</label>
+        <input type="text" name="username" placeholder="Ingrese e-mail" />
+
+        <!--Contraseña-->
+        <label for="password">Contraseña</label>
+        <input type="password" name="password" id="pass" placeholder="Ingrese contraseña" />
+
+        <input type="submit" value="Ingresar" onclick="Encriptar()" />
+
+        <div class="foot-nav">
+          <div>
+
+            <br>
+            <p>¿No tengo una cuenta?</p>
+            <a href="register.php">Crear una cuenta</a>
+          </div>
+        </div>
+        <!-- <a href="index.php"> Volver a la pagina principal</a> -->
+        <!--Hacia la pagina principal-->
+
+      </form>
+      <script>
+
+        function Encriptar() {
+          var input_pass = document.getElementById("pass");
+          input_pass.value = CryptoJS.SHA256(input_pass.value)
+          alert(input_pass.value);
+        }
+      </script>
+    </div>
+  </div>
+  <!-- FOOTER -->
+
+
+
+</body>
+
+</html>
